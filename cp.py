@@ -43,10 +43,10 @@ y=df['selling_price']
 # building models
 
 
-bg=BaggingRegressor(base_estimator=rf,n_estimators=5,random_state=25)
-bg.fit(x,y)
+rf=RandomForestRegressor(max_depth=30,n_estimators=20,random_state=35)
+rf.fit(x,y)
 
 # saving models
 import pickle
-pickle.dump(bg,open('bagging.pkl','wb'))
+pickle.dump(rf,open('rf.pkl','wb'))
 
