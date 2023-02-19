@@ -4,7 +4,7 @@ import pandas as pd
 import streamlit as st
 import numpy as np
 
-bg_model = pickle.load(open('bagging.pkl','rb'))
+model = pickle.load(open('rf.pkl','rb'))
 
 
 
@@ -120,6 +120,6 @@ data=pd.DataFrame(n)
   
 
 if(st.button('Submit')):
-  result = bg_model.predict(data)
+  result = model.predict(data)
   st.text("estimate selling price is :")
   st.success(result[0])
