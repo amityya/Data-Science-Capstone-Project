@@ -43,7 +43,7 @@ y=df['selling_price']
 # building models
 
 
-rf=RandomForestRegressor(max_depth=30,n_estimators=20,random_state=35)
+rf=RandomForestRegressor(n_estimators=70,min_samples_split=5,max_depth=11,random_state=45)
 rf.fit(x,y)
 
 # saving models
